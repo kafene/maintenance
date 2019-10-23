@@ -1,0 +1,9 @@
+# Maintenance
+RedirectMatch 503 ^/(?!maintenance\.html)
+ErrorDocument 503 /maintenance.html
+
+<Files "maintenance.html">
+Header always set Content-Security-Policy "default-src 'none'; style-src 'self'; frame-ancestors 'none'; form-action 'none'; block-all-mixed-content; disown-opener; reflected-xss block; manifest-src 'none'; referrer no-referrer"
+Header always set Cache-Control "no-store, no-cache"
+Header always set X-UA-Compatible "ie=edge"
+</Files>
